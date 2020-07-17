@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyFlaskFirstCode</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    {% include 'includes/_navbar.html' %}
+    <div class="container">
+        {% include 'includes/_messages.html'%}
+        {% block body %}{% endblock %}
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Airport</title>
+    <link rel = "icon" type = "image/png" href = "i1.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel ="stylesheet" href="style1.css">
+    </style>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+  <a class="active" href="#"><i class="fa fa-home"></i></a>
+  <a href="#gallery">Gallery</a>
+  <a href="#women">Women</a>
+  <a href="#kid">Kid</a>
+  <a href="#login">Login</a>
+  <a href="javascript:void(0);" class="icon" >
+    <i class="fa fa-bars"></i>
+  </a>
+
+</div>
+
+<div style="padding-left:16px">
+  <h2>Responsive Topnav Example</h2>
+  <p>Resize the browser window to see how it works.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Display</title>
+</head>
+<style>
+   label{
+     color: black;
+     padding: 8px;
+     height : 20px;
+
+    }
+
+    input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #999; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+</style>
+
+<body>
+{% include 'header.html' %}
+
+<h3 style=" color:white; background-color:#333; text-align: center;font-size:18px; padding : 12px 12px; font-family:verdana">***************Ticket******************</h3><br>
+<label>Username: Mr./Mrs.{{username}} </label><br>
+<label>Movie Name:{{l[0]}}</label><br>
+<label>Date: {{dat}} </label><br>
+<label>Theater Name:{{l[1]}},{{l[2]}}</label><br>
+<label>Show Timings: {{slot}}</label><br>
+<label>Screen number:{{l[3]}}</label><br><br>
+<label>For Platinum ticket:140 rupees  <br> For Gold ticket:120 rupees <br>  For Silver ticket:100 rupees</label><br><br>
+
+<label>Total Number of seats booked:{{totalSeat}} </label><br>
+
+{% for row in l[6]%}
+  {{row}},
+{% endfor %}<br>
+
+<h3 style=" color:#333; font-size:18px;  font-family:verdana">Grand Total:<label>{{price}}</label></h3><br>
+<button><a href="/account/{{username}}/{{price}}/{{movieId}}/{{theaterId}}/{{screenId}}">Proceed to pay</a></button>
+
+</body>
+</html>

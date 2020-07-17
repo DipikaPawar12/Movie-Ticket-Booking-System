@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add movie</title>
+</head>
+<style>
+    label{
+     color: black;
+     padding: 8px;
+     height : 20px;
+
+    }
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  resize: none;
+}
+
+    input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+</style>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+<body>
+{% include 'header.html' %}
+{{error}}<br>
+     <h1 style=" background-color:#333 ; color:white;  font-size:28px ; padding : 16px 16px; font-family:verdana">Add Movie</h1>
+     {% from "_formhelper.html" import render_field %}
+     <form method="POST" action="">
+
+         <div class="form-group">
+             {{render_field(form.movieName,class_="form-control" ,placeholder="What's the name of the movie?")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.castName,class_="form-control",placeholder="Who is the star cast of the movie?")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieDiscription,class_="form-control",placeholder="What are the highlights of the movie?")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieDirector,class_="form-control",placeholder="Who is the director of the movie?")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieProducer ,class_="form-control",placeholder="Who is the producer of the movie?")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieGenre,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieCertificate,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieDuration,class_="form-control")}}
+         </div><br>
+         <div class="form-group">Rate:
+             <input type="number" id="movieRating"  name="movieRating" step="0.5" min="0" max="5">
+         </div><br>
+
+         <div class="form-group">
+             {{render_field(form.movieReleaseDate,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieLanguage,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieStatus,class_="form-control")}}
+         </div><br>
+         <button style=" background-color: #333;border: none; color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 20px;"type="submit" class="btn btn-primary" onclick="goBack()">Add</button>
+     </form>
+
+<script>
+    let genre_select = document.getElementById('movieGenre');
+
+    genre_select.onchange = function(){
+      movieGenre = genre_select.value;
+    }
+</script>
+
+</body>
+</html>

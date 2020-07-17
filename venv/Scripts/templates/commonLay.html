@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie Booking</title>
+
+    <style type="text/css">
+
+
+        body {
+          font-size: 20px;
+        }
+        menu{
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+          position: -webkit-sticky; /* Safari */
+          position: sticky;
+          top: 0;
+        }
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+        }
+
+        li {
+          float: left;
+          border-right:1px solid #bbb;
+        }
+
+        li:last-child {
+          border-right: none;
+        }
+        .active {
+            background-color: #4CAF50;
+        }
+
+        li a, .dropbtn {
+          display: inline-block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        li a:hover, .dropdown:hover .dropbtn {
+          background-color: white;
+        }
+
+        li.dropdown {
+          display: inline-block;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+
+        .dropdown-content a:hover {background-color: #f1f1f1;}
+
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+
+        .slider {
+          width: 90%;
+          height: 100px;
+          margin: 25px auto;
+          box-sizing: border-box;
+          overflow: hidden;
+          box-shadow: 5px 5px 10px grey;
+
+        }
+
+        img {
+          width: 100%;
+          height: 150%;
+          animation: ani 2s linear;
+
+        }
+
+        @keyframes ani {
+          0% {
+            transform: scale(1.2);
+          }
+          10% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(1);
+          }
+
+ *{box-sizing:border-box}
+
+
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+
+
+
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.slideshow-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+        </style>
+
+
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="{{url_for('static', filename='Tanhaji 1.jpg')}}"  style="width:1500px;height:400px;">
+  </div>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="{{url_for('static', filename='avengers_endgame.jfif')}}"  style="width:1500px;height:400px;">
+  </div>
+  </div>
+
+        <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="{{url_for('static', filename='Thappad.jpg')}}"  style="width:1500px;height:400px;">
+        </div>
+  </div>
+
+
+
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+    {% include 'navbar2.html' %}
+</body>
+
+ <script >
+       var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+   </script>
+</html>
+

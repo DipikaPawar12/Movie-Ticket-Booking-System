@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>report display</title>
+</head>
+<body>
+{% include 'header.html' %}
+See your today's sale:<br><br>
+
+Theater One:<br>
+total rupees:{{tt1}}<br>
+In which:<br>
+{{ct1}} rupees comes from refreshments!!!<br><br>
+
+Theater Two:<br>
+total rupees:{{tt2}}<br>
+In which:<br>
+{{ct2}} rupees comes from refreshments!!!<br><br>
+{% include 'footer.html' %}
+</body>
+</html>

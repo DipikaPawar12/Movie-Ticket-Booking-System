@@ -1,0 +1,9 @@
+{% include 'header.html' %}
+<body><h1>Want more add slots?</h1>
+     {% from "_formhelper.html" import render_field %}
+<form method="POST" action="">
+         <div class="form-group">
+             {{render_field(form.wantMore,class_="form-control")}}
+         </div><br>
+    <button type="submit">Submit</button>
+</form>

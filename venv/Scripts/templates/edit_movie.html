@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit movie</title>
+</head>
+<body>
+{% include 'header.html' %}
+     <h1 style=" background-color:#333 ; color:white;  font-size:28px ; padding : 16px 16px; font-family:verdana">UpdateMovie</h1>
+     {% from "_formhelper.html" import render_field %}
+     <form method="POST" action="">
+         <div class="form-group">
+             {{render_field(form.movieName,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieDiscription,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieDirector,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieProducer ,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieGenre,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieCertificate,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieDuration,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieRating,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieReleaseDate,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieLanguage,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.movieStatus,class_="form-control")}}
+         </div><br>
+         <p><input type="submit" class="btn btn-primary" value="Edit" ></p>
+     </form>
+
+</body>
+</html>

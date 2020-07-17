@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+    <html lang="en">
+<style>
+  button {
+  background-color: #333 /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.body {
+	overflow: scroll;
+	/* or */
+	overflow-x: scroll;
+	overflow-y: scroll;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Details</title>
+
+</head>
+<body>
+{% include 'header.html' %}
+        <h1 style=" color:white; background-color:#333; font-size:22px; padding : 12px 12px; text-align:center; font-family:verdana">{{value[0]['movieName']}}</h1>
+        <p style=" color:#333;  font-family:verdana"> Movie Name: {{value[0]['movieName']}}</p>
+       <p style=" color:#333; font-size:20px; font-family:verdana"> Movie Cast:
+        {% for row in value2 %}
+          {{row['mccastName']}} ,
+
+    {% endfor %}</p>
+
+ <p style=" color:#333; font-size:20px; font-family:verdana">Movie Description: {{value[0]['movieDiscription']}}</p>
+<p style=" color:#333; font-size:20px; font-family:verdana">Movie Genre: {{value[0]['movieGenre']}}   |  Movie Certification: {{value[0]['movieCertificate']}}</p>
+
+        <p style=" color:#333; font-size:20px; font-family:verdana">Movie Ratings: {{value[0]['movieRating']}}  |  Movie Duration: {{value[0]['movieDuration']}}</p>
+<p style=" color:#333; font-size:20px; font-family:verdana">Movie Director: {{value[0]['movieDirector']}} | Movie Producer: {{value[0]['movieProducer']}}</p>
+<p style=" color:#333; font-size:20px; font-family:verdana">Movie Language: {{value[0]['movieLanguage']}}</p>
+
+         <p style=" color:#333; font-size:20px;  font-family:verdana">Movie Show Timings:</p>
+
+
+        {% for row in value %}
+            {%if (row['time1']) == 'True' %}
+                 <br>
+                 <button ><a href="/seatlook/{{value[0]['movieId']}}/{{value[0]['slotTheaterId']}}/{{value[0]['slotScreenId']}}/'time1'">9:30</a></button><br>
+            {%endif%}
+            {%if (row['time2']) == 'True' %}
+                 <br>
+                <button ><a href="/seatlook/{{value[0]['movieId']}}/{{value[0]['slotTheaterId']}}/{{value[0]['slotScreenId']}}/'time2'">2:30</a></button><br>
+            {%endif%}
+            {%if (row['time3']) == 'True' %}
+                <br>
+                <button ><a href="/seatlook/{{value[0]['movieId']}}/{{value[0]['slotTheaterId']}}/{{value[0]['slotScreenId']}}/'time3'">8:00</a></button><br>
+            {%endif%}
+        {% endfor %}
+
+</body>

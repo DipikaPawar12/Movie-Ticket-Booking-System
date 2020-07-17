@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Payment</title>
+</head>
+<style>
+   label{
+     color: black;
+     padding: 8px;
+     height : 20px;
+
+    }
+
+button {
+  background-color: #999; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+
+h3{
+color:white;
+background-color:#333;
+font-size:18px;
+padding : 12px 12px;
+font-family:verdana"
+}
+
+h4{
+color:#333;
+font-size:18px;
+
+font-family:verdana"
+}
+</style>
+
+<body>
+{% include 'header.html' %}
+<h3>
+You Remember!!! The last one movie you had watched!!!</h3>
+
+Movie Name:{{mname}}
+     {% from "_formhelper.html" import render_field %}
+     <form method="POST" action="">
+         <div class="form-group">Rate:
+             <input type="number" id="rate"  name="rate" step="0.5" min="0" max="5">
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.review,class_="form-control")}}
+         </div><br>
+         <button type="submit">Submit</button>
+     </form>
+</body>
+</html>

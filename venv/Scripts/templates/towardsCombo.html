@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Combo Selection</title>
+</head>
+<style>
+input,button {
+    display: inline-block;
+    padding: 5px;
+}
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 15px;
+}
+th {
+  text-align: left;
+}
+table tr:nth-child(even) {
+  background-color: #eee;
+}
+table tr:nth-child(odd) {
+ background-color: #fff;
+}
+table th {
+  background-color: black;
+  color: white;
+}
+
+
+button {
+  background-color: #666 /* Green */
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+</style>
+
+</head>
+<body>
+{% include 'header.html' %}
+<h1 style=" color:white; background-color:#333; font-size:22px; padding : 16px 16px; text-align:center; font-family:verdana">Select Combo</h1>
+<table style="width:100%">
+    <thead>
+    <tr>
+        <th>Index</th>
+        <th>comboName</th>
+        <th>comboPrice</th>
+        <th>comboDiscrption</th>
+        <th>Quantity</th>
+    </tr>
+    </thead>
+    {% from "_formhelper.html" import render_field %}
+    <form method="POST" action="">
+    <tbody>
+        {% for row in value %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{row['comboName']}}</td>
+                <td>{{row['comboPrice']}}</td>
+                <td>{{row['comboDiscription']}}</td>
+                <td>
+                    <button><a href="/comboQuantity/{{movieId}}/{{theaterId}}/{{screenId}}/{{username}}/{{row['comboId']}}">Add</a></button>
+                </td>
+                </form>
+                </td>
+            </tr>
+            <br>
+        {% endfor %}
+    </tbody>
+    </form>
+</table>
+<h4 style=" color:#333; font-size:22px;  font-family:verdana">No combo?</h4>
+<button><a href="/ticket/{{movieId}}/{{theaterId}}/{{screenId}}/{{username}}">Next</a></button>
+
+</body>
+</html>

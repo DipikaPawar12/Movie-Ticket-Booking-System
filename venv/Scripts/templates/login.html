@@ -1,0 +1,61 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+
+<style>
+    label{
+     color: black;
+     padding: 8px;
+     height : 20px;
+
+    }
+
+    input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #333; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+</style>
+
+<body>
+{% include 'dash_header.html' %}
+<div class="container">
+    {% block body %}
+    <h1 style=" background-color:#333 ; color:white;  font-size:28px ; padding : 16px 16px; font-family:verdana">Login</h1>
+    <form action="" method="POST">
+        <div class="form-group">
+            <label>Username:</label>
+            <input type="text" name="username" class="form-control" value={{request.form.username}}>
+        </div>
+        <div class="form-group">
+            <label>Password:</label>
+            <input type="password" name="password" class="form-control" value={{request.form.password}}>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% endblock %}
+</div>
+{% include 'footer.html' %}
+</body>

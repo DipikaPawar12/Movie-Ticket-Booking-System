@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add time slot</title>
+</head>
+<style>
+    label{
+     color: black;
+     padding: 8px;
+     height : 20px;
+
+    }
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  resize: none;
+}
+
+    input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+</style>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+<body>
+{% include 'header.html' %}
+{{error}}<br>
+     <h1 style=" background-color:#333 ; color:white;  font-size:28px ; padding : 16px 16px; font-family:verdana">Add Movie</h1>
+     {% from "_formhelper.html" import render_field %}
+     <form method="POST" action="">
+
+
+         <div class="form-group">
+             {{render_field(form.slotTheaterId,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.slotScreenId,class_="form-control")}}
+         </div><br>
+         At what you want to add?<br>
+         <div class="form-group">
+             {{render_field(form.time1,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.time2,class_="form-control")}}
+         </div><br>
+          <div class="form-group">
+             {{render_field(form.time3,class_="form-control")}}
+         </div><br>
+         <button type="submit" class="btn btn-primary" onclick="goBack()">Add</button>
+     </form>
+
+
+</body>
+</html>

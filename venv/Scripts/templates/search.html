@@ -1,0 +1,10 @@
+
+     <h1>Search</h1>
+     {% from "_formhelper.html" import render_field %}
+     <form method="POST" action="">
+         <div class="form-group">
+             {{render_field(form.search,class_="form-control")}}
+         </div><br>
+         <button type="submit">Search</button>
+         <button>Cancel</button>
+     </form>

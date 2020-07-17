@@ -1,0 +1,56 @@
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+</style>
+
+<div>
+    <ul>
+        <li>
+            <a class="container">
+                <img src="{{url_for('static', filename='past movie icon.jfif')}}" alt="Icon"
+                     style="width:200px;height:200px;">
+                <div class="centered">Past Movies</div>
+            </a>
+            <a class="container">
+                <img src="{{url_for('static', filename='released movie icon.jfif')}}" alt="Icon"
+                     style="width:200px;height:200px;">
+                <div class="centered">Released Movies</div>
+            </a>
+            <a class="container">
+                <img src="{{url_for('static', filename='movie icon.jfif')}}" alt="Icon"
+                     style="width:200px;height:200px;">
+                <div class="centered" href="/user">Upcoming Movie</div>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+
+<div class="footer">
+    <p>Designed By @MAD</p>
+</div>

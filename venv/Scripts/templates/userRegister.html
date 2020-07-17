@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<style>
+ label{
+     color: black;
+     padding: 8px;
+     height : 20px;
+
+    }
+
+    input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #333; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+</style>
+<body>
+{% include 'header.html' %}
+     <h1 style=" background-color:#333 ; color:white;  font-size:28px ; padding : 16px 16px; font-family:verdana">User Sign-Up</h1>
+     {% from "_formhelper.html" import render_field %}
+     <form method="POST" action="">
+          <div class="form-group">
+             {{render_field(form.userName,class_="form-control",placeholder="By what name do we call you?")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.userFirstName,class_="form-control",placeholder="What is your first name?")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.userLastName,class_="form-control",placeholder="What is your last name??")}}
+         </div><br>
+
+         <div class="form-group">
+             {{render_field(form.userPassword,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.userEmail,class_="form-control",placeholder="On what id do you want to get notified?")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.userBirthdate,class_="form-control")}}
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.userContact,class_="form-control",placeholder="Your contact details,please...")}}
+         </div><br>
+         <button type="submit">Sign-Up</button>
+         <p>Already have account? <a href="/userlogin/{{movieId}}/{{theaterId}}/{{screenId}}">--Sign In--</a></p>
+
+     </form>
+
+</body>
+</html>

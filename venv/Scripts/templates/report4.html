@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>report display</title>
+</head>
+<body>
+{% include 'header.html' %}
+<h2>Theater's History from day one to now</h2>
+
+{% for row1 in value %}
+ <h3>In Theater : {{loop.index}}</h3>
+
+  {% for row2 in row1 %}
+<h4>On date:
+    {{row2[0]}}</h4>
+  {% for row3 in row2[1] %}
+     At time:
+    {% if row3[0]=='time1'%}
+     9:30
+
+    {% endif %}
+      {% if row3[0]=='time2'%}
+     2:30
+
+    {% endif %}
+    {% if row3[0]=='time3'%}
+     8:00
+    {% endif %}
+  <br>Number of users are:
+      {{row3[1]}}<br><br>
+
+
+    {% endfor%}
+<br>
+    {% endfor%}
+{% endfor%}
+
+</body>
+</html>

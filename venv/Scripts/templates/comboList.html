@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>combo</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 15px;
+}
+th {
+  text-align: left;
+}
+table tr:nth-child(even) {
+  background-color: #eee;
+}
+table tr:nth-child(odd) {
+ background-color: #fff;
+}
+table th {
+  background-color: black;
+  color: white;
+}
+
+table{
+position: absolute;
+  top: 160px;
+  right: 0;
+  left : 1;
+}
+
+</style>
+</head>
+<body>
+{% include 'header.html' %}
+<table style="width:100%">
+    <thead>
+    <tr>
+        <th>comboID</th>
+        <th>comboTheaterId</th>
+        <th>comboName</th>
+        <th>comboPrice</th>
+        <th>comboQuantity</th>
+        <th>comboDiscrption</th>
+        <th>WannaEdit</th>
+        <th>WannaDelete</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for row in value %}
+            <tr>
+                <td>{{row['comboId']}}</td>
+                <td>{{row['comboTheaterId']}}</td>
+                <td>{{row['comboName']}}</td>
+                <td>{{row['comboPrice']}}</td>
+                <td>{{row['comboQuantity']}}</td>
+                <td>{{row['comboDiscription']}}</td>
+                <td><a href="editcombo/{{row.comboId}}/{{row.comboTheaterId}}" class="btn btn-default pull-right">Edit</a></td>
+                <td>
+                  <form action="{{url_for('delete_combo', comboId=row.comboId,comboTheaterId=row.comboTheaterId)}}" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="Delete" class="btn btn-danger">
+                </form>
+                </td>
+            </tr>
+            <br>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>

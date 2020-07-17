@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+td {
+  padding: 12px;
+}
+th {
+  height: 50px;
+}
+th {
+  text-align: left;
+}
+table tr:nth-child(even) {
+  background-color: #eee;
+}
+table tr:nth-child(odd) {
+ background-color: #fff;
+}
+table th {
+  background-color: black;
+  color: white;
+  height: 50px;
+}
+
+table{
+
+  top: 450px;
+  right: 0;
+  left : 1;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px 18px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #4CAF50;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+button {
+  background-color: #333; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+h3{
+color:white;
+background-color:#333;
+font-size:18px;
+padding : 12px 12px;
+font-family:verdana"
+}
+</style>
+</head>
+<body>
+{% include 'header.html' %}
+<h3>Movies Comming soon.....</h3>
+<table style="width:100%">
+    <thead>
+    <tr>
+        <th>Movie Name</th>
+
+        <th>Release Date</th>
+        <th>Ratings</th>
+        <th>Language of movie</th>
+                <th>Movie Likes(/5)</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for row in value %}
+            <tr>
+                <td>{{row['movieName']}}</td>
+
+                <td>{{row['movieReleaseDate']}}</td>
+                <td>{{row['movieRating']}}</td>
+                <td>{{row['movieLanguage']}}</td>
+                   <td>{{row['movieRate']}}</td>
+            </tr>
+            <br>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Delete movie</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 15px;
+}
+th {
+  text-align: left;
+}
+table tr:nth-child(even) {
+  background-color: #eee;
+}
+table tr:nth-child(odd) {
+ background-color: #fff;
+}
+table th {
+  background-color: black;
+  color: white;
+}
+
+table{
+position: absolute;
+  top: 160px;
+  right: 0;
+  left : 1;
+}
+
+</style>
+</head>
+<body>
+{% include 'header.html' %}
+<table style="width:100%">
+    <thead>
+    <tr>
+        <th>movieID</th>
+        <th>movieName</th>
+        <th>movieDiscrption</th>
+        <th>movieDiretor</th>
+        <th>movieProducer</th>
+        <th>movieGenre</th>
+        <th>movieCertificate</th>
+        <th>movieDuration</th>
+        <th>movieRating</th>
+        <th>moviereleaseDate</th>
+        <th>movieLanguage</th>
+        <th>movieStatus</th>
+        <th>Wanna Edit</th>
+        <th>Wanna Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for row in value %}
+            <tr>
+                <td>{{row['movieId']}}</td>
+                <td>{{row['movieName']}}</td>
+                <td>{{row['movieDiscription']}}</td>
+                <td>{{row['movieDirector']}}</td>
+                <td>{{row['movieProducer']}}</td>
+                <td>{{row['movieGenre']}}</td>
+                <td>{{row['movieCertificate']}}</td>
+                <td>{{row['movieDuration']}}</td>
+                <td>{{row['movieRating']}}</td>
+                <td>{{row['movieReleaseDate']}}</td>
+                <td>{{row['movieLanguage']}}</td>
+                <td>{{row['movieStatus']}}</td>
+                <td><a href="editmovie/{{row.movieId}}" class="btn btn-default pull-right">Edit</a></td>
+                <td>
+                  <form action="{{url_for('delete_movie', movieId=row.movieId)}}" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="Delete" class="btn btn-danger">
+                </form>
+                </td>
+            </tr>
+            <br>
+        {% endfor %}
+    </tbody>
+</table>
+</body>

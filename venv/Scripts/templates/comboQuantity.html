@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Combo Quantity</title>
+</head>
+<style>
+   label{
+     color: black;
+     padding: 8px;
+     height : 20px;
+
+    }
+
+    input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+    button {
+  background-color: #666 /* Green */
+  border: none;
+  color: blue;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+</style>
+<body>
+{% include 'header.html' %}
+<h1 style=" color:white; background-color:#333; font-size:22px; padding : 16px 16px; text-align:center; font-family:verdana">Select Quantity of combo</h1>
+
+     {% from "_formhelper.html" import render_field %}
+     <form method="POST" action="">
+         <div class="form-group">
+             Quantity:
+             <input type="number" id="quantity" name="quantity" min="0" max={{quantity}}>
+         </div><br>
+         <div class="form-group">
+             {{render_field(form.wantMore,class_="form-control")}}
+         </div><br>
+         <button><a href="/towardsCombo/{{movieId}}/{{theaterId}}/{{screenId}}/{{username}}">cancel</a></button>
+         <button type="submit">Submit</button>
+     </form>
+{% include 'footer.html' %}
+</body>
+</html>

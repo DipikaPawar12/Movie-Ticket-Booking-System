@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Auto Play image Slider</title>
+</head>
+
+<body>
+
+  <div class="slider">
+
+    <div id="img">
+        <img src="https://image.shutterstock.com/image-photo/airplane-isolated-on-white-background-260nw-584015857.jpg">
+    </div>
+
+  </div>
+
+  <script>
+
+    var images = ['a.jpg', 'b.jpg', 'c.jpg', 'd.jpg', 'e.jpg'];
+
+    var x = 0;
+
+    var imgs = document.getElementById('img');
+
+    setInterval(slider, 2000);
+
+
+    function slider() {
+
+      if (x < images.length) {
+        x = x + 1;
+      } else {
+        x = 1;
+      }
+
+
+      imgs.innerHTML = "<img src=" + images[x - 1] + ">";
+
+
+    }
+
+
+  </script>
+
+
+  <style type="text/css">
+    .slider {
+      width: 90%;
+      height: 500px;
+      margin: 20px auto;
+      box-sizing: border-box;
+      overflow: hidden;
+      box-shadow: 5px 5px 10px grey;
+
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      animation: ani 2s linear;
+
+    }
+
+    @keyframes ani {
+      0% {
+        transform: scale(1.2);
+      }
+      10% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Payment</title>
+</head>
+<style>
+   label{
+     color: black;
+     padding: 8px;
+     height : 20px;
+
+    }
+
+button {
+  background-color: #999; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+
+h3{
+color:white;
+background-color:#333;
+font-size:18px;
+padding : 12px 12px;
+font-family:verdana"
+}
+
+h4{
+color:#333;
+font-size:18px;
+
+font-family:verdana"
+}
+</style>
+
+<body>
+{% include 'header.html' %}
+<h3>Payment and Account Details</h3>
+
+<h4>Username: Mr./Mrs. {{username}} </h4>
+<h4>Account Number: {{value[0]['accountId']}}</h4>
+<h4>Current Balance: {{value[0]['accountBalance']}}</h4>
+
+<h4 style="color:black">Total bill amount is:{{payment}}</h4><br><br>
+<button><a href="/pdf/{{value[0]['accountId']}}/{{payment}}/{{movieId}}/{{theaterId}}/{{screenId}}/{{username}}">Confirm To Pay</a></button>
+{% include 'footer.html' %}
+</body>
+</html>>
+

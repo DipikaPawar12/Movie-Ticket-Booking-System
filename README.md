@@ -1,5 +1,5 @@
 <h1 align = "center">
-    Visitor Management System
+    Movie Ticket Booking System
 </h1>
 
 ---

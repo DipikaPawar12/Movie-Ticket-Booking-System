@@ -24,9 +24,13 @@
 ---
 Movie ticket booking system makes the task of booking tickets to watch movies easier and allows you to enjoy the movie-watching experience while sitting in seats of your choice and having your refreshments delivered to you at your seats.
 
-## Flow and ER diagram of the system
+## Flow of the system
+---
 <img src = "Flow.png">
 
+---
+
+## ER diagram of the system
 ---
 <img src = "ER.png">
 
@@ -38,7 +42,7 @@ Movie ticket booking system makes the task of booking tickets to watch movies ea
 - Flask
 - MySQL
 
-## Installations and Running
+## Running
 
 ---
 
@@ -50,20 +54,20 @@ Movie ticket booking system makes the task of booking tickets to watch movies ea
  
 - Here the main python file is trail.py. 
   ```
-  venv\Scripts\trail.py
+  venv/Scripts/trail.py
   ```
- - In this project we had used MySQL database. whose connections are written here.
-  ```
-  #for mysql setup
-  trail.config['MYSQL_HOST'] = 'localhost'            #local host name
-  trail.config['MYSQL_USER'] = 'root'                 #your user name
-  trail.config['MYSQL_PASSWORD'] = ''                 #your password
-  trail.config['MYSQL_DB'] = 'movie'                  #Your database name
-  trail.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+- In this project we had used MySQL database. whose connections are written here.
+    ```
+     #for mysql setup
+     trail.config['MYSQL_HOST'] = 'localhost'            #local host name
+     trail.config['MYSQL_USER'] = 'root'                 #your user name
+     trail.config['MYSQL_PASSWORD'] = ''                 #your password
+     trail.config['MYSQL_DB'] = 'movie'                  #Your database name
+     trail.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
-  # init MYSQL
-  mysql = MySQL(trail)
-  ```
+     # init MYSQL
+     mysql = MySQL(trail)
+    ```
 
 
 

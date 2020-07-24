@@ -7,7 +7,7 @@
 <img alt="PyPI - Python Version" src="https://img.shields.io/badge/python%20vesion-3.7.4-green"> <img alt="PyPI - Flask Version" src="https://img.shields.io/badge/flask%20version-1.1.2-blue">
 
 <p>
-<img src = "MBS.png">
+<img src = "MBS.PNG">
 </p>
 
 <h1>Table of Content</h1>

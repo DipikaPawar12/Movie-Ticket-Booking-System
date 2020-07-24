@@ -13,8 +13,10 @@
 <h1>Table of Content</h1>
 
 - [Introduction](#introduction)
+- [Flow of the system](#Flow of the system)
+- [ER diagram of the system](#ER diagram of the system)
 - [Technology Stack](#technology-stack)
-- [Installations and Running](#installations-and-running)
+- [Running](#installations-and-running)
 - [Contributors](#contributors)
 
 

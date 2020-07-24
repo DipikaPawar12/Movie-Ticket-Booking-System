@@ -49,21 +49,21 @@ Movie ticket booking system makes the task of booking tickets to watch movies ea
   ```
  
 - Here the main python file is trail.py. 
- ```
- venv\Scripts\trail.py
- ```
+  ```
+  venv\Scripts\trail.py
+  ```
  - In this project we had used MySQL database. whose connections are written here.
-```
-#for mysql setup
-trail.config['MYSQL_HOST'] = 'localhost'            #local host name
-trail.config['MYSQL_USER'] = 'root'                 #your user name
-trail.config['MYSQL_PASSWORD'] = ''                 #your password
-trail.config['MYSQL_DB'] = 'movie'                  #Your database name
-trail.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+  ```
+  #for mysql setup
+  trail.config['MYSQL_HOST'] = 'localhost'            #local host name
+  trail.config['MYSQL_USER'] = 'root'                 #your user name
+  trail.config['MYSQL_PASSWORD'] = ''                 #your password
+  trail.config['MYSQL_DB'] = 'movie'                  #Your database name
+  trail.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
-# init MYSQL
-mysql = MySQL(trail)
-```
+  # init MYSQL
+  mysql = MySQL(trail)
+  ```
 
 
 
